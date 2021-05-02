@@ -1,32 +1,19 @@
 import { useState } from "react";
-import env from "react-dotenv";
-const Parse = require("parse");
+import "../componentStyles/Movies.css";
 
-const Movies = () => {
-  const [movieList, setMovieList] = useState();
+const Movies = ({ moviesList }) => {
+  const [movie, setMovie] = useState([]);
 
-  const renderMovies = async () => {
-    Parse.serverURL = "https://parseapi.back4app.com";
-    Parse.initialize(env.PARSE_APP_ID, env.PARSE_JS_KEY, env.PARSE_MASTER_KEY);
-    const query = new Parse.Query("Movies");
-
-    const parseResults = await query.find();
-    setMovieList(parseResults);
-
-    parseResults.then((response) => {
-      console.log(response);
-
-      return (
-        <div>
-          <p>{response[0].attributes.MovieName}</p>
-        </div>
-      );
-    });
-  };
+  moviesList.then((resp) => {
+    setMovie(resp);
+  });
 
   return (
     <div>
       <h1>Movies</h1>
+      {movie.map((e) => (
+        <img src={e} alt="" key={e + 1} />
+      ))}
     </div>
   );
 };

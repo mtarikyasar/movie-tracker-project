@@ -13,7 +13,6 @@ const Home = () => {
     // Getting database to check if movie exists
     const query = new Parse.Query("Movies");
     const parseResults = await query.find();
-    console.log(parseResults);
     let movieName = document.getElementById("movieNameInput").value;
 
     axios
