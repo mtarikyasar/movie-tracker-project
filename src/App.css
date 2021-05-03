@@ -3,8 +3,7 @@
 }
 
 body {
-  background-image: url("./componentStyles/background/background3.jpg");
-  background-size: 100%;
+  background-color: #eae7dc;
 }
 
 .App {

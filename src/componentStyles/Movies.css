@@ -1,17 +1,9 @@
-.movies {
-  background-color: rgba(20, 20, 20, 0.2);
-  border-radius: 10px;
-  width: 10%;
-  padding: 1px;
-  margin: auto;
-  margin-top: 5px;
-  margin-bottom: 25px;
-  transition: 0.2s linear;
-}
-
-.movies:hover {
-  background-color: rgba(20, 20, 20, 0.6);
-  color: white;
+:root {
+  --bg-color: #eae7dc;
+  --navbar-color: #d8c3a5;
+  --fg-color: #8e8d8a;
+  --fg-hover-color: #e85a4f;
+  --border-color: #e98074;
 }
 
 h1 {

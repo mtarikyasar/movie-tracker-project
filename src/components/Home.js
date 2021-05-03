@@ -1,4 +1,3 @@
-import { useState } from "react";
 import env from "react-dotenv";
 import "../componentStyles/Home.css";
 
@@ -6,19 +5,32 @@ const axios = require("axios");
 const Parse = require("parse");
 
 const Home = () => {
-  const [movie, setMovie] = useState("");
-
+  // Initialize Parse server
   Parse.serverURL = "https://parseapi.back4app.com";
   Parse.initialize(env.PARSE_APP_ID, env.PARSE_JS_KEY, env.PARSE_MASTER_KEY);
 
+  // Notification Function
+  const sendNotification = (element, message) => {
+    element.innerHTML = message;
+    element.style.display = "initial";
+
+    setTimeout(() => {
+      element.style.display = "none";
+    }, 2000);
+  };
+
+  // Click handle function
   const handleClick = async () => {
     const MovieClass = Parse.Object.extend("Movies");
 
     // Getting database to check if movie exists
     const query = new Parse.Query("Movies");
     const parseResults = await query.find();
+
+    // Get input value
     let movieName = document.getElementById("movieNameInput").value;
 
+    // If input value is not empty
     if (movieName !== "") {
       axios
         .get(
@@ -28,40 +40,52 @@ const Home = () => {
             env.OMDB_API_KEY
         )
         .then((response) => {
+          // If movie exists on the parse database
           if (
             !parseResults.some(
               (e) => e.attributes.MovieName === response.data.Title
             )
           ) {
-            const movieObject = new MovieClass();
+            // If movie not found
+            if (response.data.Response === "False") {
+              sendNotification(
+                document.querySelector(".notification-fail"),
+                `Movie '${movieName}' cannot be found! Please check if its spelled correctly.`
+              );
+            } else {
+              // Initialize new Parse Object
+              const movieObject = new MovieClass();
 
-            // Adding movie details to Parse Database
-            movieObject.set("MovieName", response.data.Title);
-            movieObject.set("Director", response.data.Director);
-            movieObject.set("Writer", response.data.Writer);
-            movieObject.set("Country", response.data.Country);
-            movieObject.set("Language", response.data.Language);
-            movieObject.set("Genre", response.data.Genre);
-            movieObject.set("Plot", response.data.Plot);
-            movieObject.set("Poster", response.data.Poster);
-            movieObject.set("ReleaseDate", response.data.Released);
-            movieObject.set("Runtime", response.data.Runtime);
+              // Adding movie details to Parse Database
+              movieObject.set("MovieName", response.data.Title);
+              movieObject.set("Director", response.data.Director);
+              movieObject.set("Writer", response.data.Writer);
+              movieObject.set("Country", response.data.Country);
+              movieObject.set("Language", response.data.Language);
+              movieObject.set("Genre", response.data.Genre);
+              movieObject.set("Plot", response.data.Plot);
+              movieObject.set("Poster", response.data.Poster);
+              movieObject.set("ReleaseDate", response.data.Released);
+              movieObject.set("Runtime", response.data.Runtime);
 
-            movieObject.save().then(
-              (result) => {
-                if (typeof document !== "undefined")
-                  console.log("ParseObject created", result);
-              },
-              (error) => {
-                if (typeof document !== "undefined")
-                  console.error("Error while creating ParseObject: ", error);
-              }
-            );
+              movieObject.save().then(
+                (result) => {},
+                (error) => {
+                  if (typeof document !== "undefined")
+                    console.error("Error while creating ParseObject: ", error);
+                }
+              );
 
-            console.log(`Movie ${movieName} added.`);
+              // Success notification
+              sendNotification(
+                document.querySelector(".notification-success"),
+                `Movie '${response.data.Title}' Successfully added to the database!`
+              );
+            }
           } else {
-            alert(
-              `Movie ${response.data.Title} already exists on the database.`
+            sendNotification(
+              document.querySelector(".notification-fail"),
+              `Movie '${response.data.Title}' already exists on the database.`
             );
           }
         })
@@ -69,19 +93,20 @@ const Home = () => {
           console.log(err);
         });
     } else {
-      alert("You have to enter a valid movie name!");
+      // If input value is empty
+      sendNotification(
+        document.querySelector(".notification-fail"),
+        "You have to enter a valid movie name!"
+      );
     }
   };
 
   return (
     <div className="App">
-      {/* <p>{movie}</p> */}
-      <input
-        type="text"
-        placeholder="Movie Name"
-        id="movieNameInput"
-        onChange={(e) => setMovie(e.target.value)}
-      />
+      <div className="notification-success"></div>
+      <div className="notification-fail"></div>
+      <h1>Movie Tracker Project</h1>
+      <input type="text" placeholder="Movie Name" id="movieNameInput" />
       <br />
       <button className="submitBtn" onClick={handleClick}>
         Save Movie
