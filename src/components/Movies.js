@@ -10,10 +10,14 @@ const Movies = ({ moviesList }) => {
 
   return (
     <div>
-      <h1>Movies</h1>
-      {movie.map((e) => (
-        <img src={e} alt="" key={e + 1} />
-      ))}
+      <div className="movies">
+        <h1>Movies</h1>
+      </div>
+      <div className="movies-section">
+        {movie.map((e) => (
+          <img src={e} alt="" key={e + 1} />
+        ))}
+      </div>
     </div>
   );
 };

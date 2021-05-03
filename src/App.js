@@ -28,7 +28,7 @@ function App() {
     <div className="App">
       <Navbar setStep={setStep} />
       {step === 0 ? <Home /> : <Movies moviesList={getMovieList()} />}
-      <p>Step: {step}</p>
+      {/* <p>Step: {step}</p> */}
     </div>
   );
 }

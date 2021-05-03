@@ -2,6 +2,11 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  background-image: url("./componentStyles/background/background3.jpg");
+  background-size: 100%;
+}
+
 .App {
   text-align: center;
 }

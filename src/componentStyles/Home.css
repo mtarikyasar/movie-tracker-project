@@ -1,0 +1,33 @@
+input {
+  background-color: rgba(30, 30, 30, 0.2);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 24px;
+  margin: 5px;
+  transition: 0.2s linear;
+}
+
+input:hover {
+  background-color: rgba(30, 30, 30, 0.4);
+}
+
+input:focus {
+  background-color: rgba(30, 30, 30, 0.8);
+}
+
+.submitBtn {
+  background-color: rgba(30, 30, 30, 0.2);
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-size: 24px;
+  margin: 3px;
+  transition: 0.2s linear;
+}
+
+.submitBtn:hover {
+  background-color: rgba(30, 30, 30, 0.8);
+  border-radius: 10px;
+  color: white;
+}

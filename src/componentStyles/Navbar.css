@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+}
+
+.links {
+  background-color: rgba(54, 54, 54, 0.5);
+  padding: 5px;
+}
+
+.links button {
+  border: none;
+  margin: 0px 10px;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 18px;
+  transition: 0.2s linear;
+}
+
+.links button:hover {
+  border-radius: 5px;
+  background-color: rgba(54, 54, 54, 0.8);
+  color: white;
+}
