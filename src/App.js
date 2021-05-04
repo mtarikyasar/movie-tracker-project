@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 
 import { useState } from "react";
-import Movies from "./components/Movies";
+import MoviesPage from "./components/MoviesPage";
 
 import env from "react-dotenv";
 const Parse = require("parse");
@@ -56,7 +56,7 @@ function App() {
   return (
     <div className="App">
       <Navbar setStep={setStep} />
-      {step === 0 ? <Home /> : <Movies moviesList={getMovies()} />}
+      {step === 0 ? <Home /> : <MoviesPage moviesList={getMovies()} />}
       {/* <p>Step: {step}</p> */}
     </div>
   );

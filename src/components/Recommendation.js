@@ -1,5 +1,5 @@
 import env from "react-dotenv";
-import SlidingText from "./SlidingText";
+import RandomMovie from "./RandomMovie";
 
 const Parse = require("parse");
 
@@ -12,12 +12,15 @@ const Recommendation = () => {
     query.equalTo("Watched", false);
     const results = await query.find();
 
-    return results[Math.floor(Math.random() * results.length)].attributes;
+    let randomNumber = Math.floor(Math.random() * results.length);
+
+    return results[randomNumber].attributes;
   };
 
   return (
     <div>
-      <SlidingText movieNamePromise={getRandomUnwatchedMovie()} />
+      <h2>Haven't you watched it yet?</h2>
+      <RandomMovie movieNamePromise={getRandomUnwatchedMovie()} />
     </div>
   );
 };

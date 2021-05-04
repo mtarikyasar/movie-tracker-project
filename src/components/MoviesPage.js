@@ -1,7 +1,8 @@
 import { useState } from "react";
-import "../componentStyles/Movies.css";
+import "../componentStyles/MoviesPage.css";
+import Movie from "./Movie";
 
-const Movies = ({ moviesList }) => {
+const MoviesPage = ({ moviesList }) => {
   const [posterAndLink, setposterAndLink] = useState([]);
 
   moviesList.then((resp) => {
@@ -10,11 +11,7 @@ const Movies = ({ moviesList }) => {
 
   const testFunction = (e) => {
     let res = e.split(" ");
-    return (
-      <a href={res[1]} target="_blank" rel="noreferrer" key={res[1]}>
-        <img src={res[0]} alt="" key={res[0] + 1} className={res[2]} />
-      </a>
-    );
+    return <Movie poster={res[0]} imdbLink={res[1]} watched={res[2]} />;
   };
 
   return (
@@ -29,4 +26,4 @@ const Movies = ({ moviesList }) => {
   );
 };
 
-export default Movies;
+export default MoviesPage;
