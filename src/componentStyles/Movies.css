@@ -1,26 +1,26 @@
 :root {
-  --bg-color: #eae7dc;
-  --navbar-color: #d8c3a5;
-  --fg-color: #8e8d8a;
-  --fg-hover-color: #e85a4f;
-  --border-color: #e98074;
+  --bg-color: #818181;
+  --bg-color-darker: #3a3a3a;
+  --fg-color: #000000;
+  --fg-hover-color: #5ecfa4;
+  --border-color: #31b381;
 }
 
 h1 {
   font-size: 34px;
 }
 
-.movies-section {
+/* .movies-section {
   background-color: rgba(20, 20, 20, 0.2);
   border-radius: 10px;
   margin: auto;
   width: 70%;
   transition: 0.2s linear;
-}
+} */
 
-.movies-section:hover {
+/* .movies-section:hover {
   background-color: rgba(20, 20, 20, 0.5);
-}
+} */
 
 img {
   width: 150px;
@@ -31,6 +31,14 @@ img {
   transition: 0.2s linear;
 }
 
-img:hover {
+/* If movie is not watched glow is red */
+.false:hover {
+  box-shadow: 0px 4px 10px rgb(252, 0, 0);
+  border-radius: 10px;
+}
+
+/* If movie is watched glow is green */
+.true:hover {
+  box-shadow: 0px 4px 10px rgb(0, 255, 0);
   border-radius: 10px;
 }

@@ -1,6 +1,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
+
 import { useState } from "react";
 import Movies from "./components/Movies";
 
@@ -11,14 +12,42 @@ Parse.serverURL = "https://parseapi.back4app.com";
 Parse.initialize(env.PARSE_APP_ID, env.PARSE_JS_KEY, env.PARSE_MASTER_KEY);
 const query = new Parse.Query("Movies");
 
-async function getMovieList() {
+async function getMovies() {
   const parseResults = await query.find();
+
+  let titleList = [];
   let posterList = [];
+  let watchList = [];
+  let imdbLinkList = [];
+
   parseResults.forEach((element) => {
-    posterList.push(element.attributes.Poster);
+    titleList.push(element.attributes.Title);
+    // Adding whitespace to split afterwards
+    // Because map function doesn't accept objects
+    posterList.push(
+      element.attributes.Poster +
+        " " +
+        element.attributes.imdbLink +
+        " " +
+        element.attributes.Watched
+    );
+    watchList.push(element.attributes.Watched);
+    imdbLinkList.push(element.attributes.imdbLink);
   });
 
-  return posterList;
+  let Movies = {
+    titles: [],
+    posters: [],
+    watchlist: [],
+    imdbLinks: [],
+  };
+
+  Movies.titles = titleList;
+  Movies.posters = posterList;
+  Movies.watchlist = watchList;
+  Movies.imdbLinks = imdbLinkList;
+
+  return Movies;
 }
 
 function App() {
@@ -27,7 +56,7 @@ function App() {
   return (
     <div className="App">
       <Navbar setStep={setStep} />
-      {step === 0 ? <Home /> : <Movies moviesList={getMovieList()} />}
+      {step === 0 ? <Home /> : <Movies moviesList={getMovies()} />}
       {/* <p>Step: {step}</p> */}
     </div>
   );

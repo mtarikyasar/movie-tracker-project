@@ -2,11 +2,20 @@ import { useState } from "react";
 import "../componentStyles/Movies.css";
 
 const Movies = ({ moviesList }) => {
-  const [movie, setMovie] = useState([]);
+  const [posterAndLink, setposterAndLink] = useState([]);
 
   moviesList.then((resp) => {
-    setMovie(resp);
+    setposterAndLink(resp.posters);
   });
+
+  const testFunction = (e) => {
+    let res = e.split(" ");
+    return (
+      <a href={res[1]} target="_blank" rel="noreferrer" key={res[1]}>
+        <img src={res[0]} alt="" key={res[0] + 1} className={res[2]} />
+      </a>
+    );
+  };
 
   return (
     <div>
@@ -14,9 +23,7 @@ const Movies = ({ moviesList }) => {
         <h1>Movies</h1>
       </div>
       <div className="movies-section">
-        {movie.map((e) => (
-          <img src={e} alt="" key={e + 1} />
-        ))}
+        {posterAndLink.map((e) => testFunction(e))}
       </div>
     </div>
   );

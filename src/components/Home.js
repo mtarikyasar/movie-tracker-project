@@ -1,5 +1,6 @@
 import env from "react-dotenv";
 import "../componentStyles/Home.css";
+import Recommendation from "./Recommendation.js";
 
 const axios = require("axios");
 const Parse = require("parse");
@@ -53,11 +54,12 @@ const Home = () => {
                 `Movie '${movieName}' cannot be found! Please check if its spelled correctly.`
               );
             } else {
+              console.log(response.data);
               // Initialize new Parse Object
               const movieObject = new MovieClass();
 
               // Adding movie details to Parse Database
-              movieObject.set("MovieName", response.data.Title);
+              movieObject.set("Title", response.data.Title);
               movieObject.set("Director", response.data.Director);
               movieObject.set("Writer", response.data.Writer);
               movieObject.set("Country", response.data.Country);
@@ -67,6 +69,15 @@ const Home = () => {
               movieObject.set("Poster", response.data.Poster);
               movieObject.set("ReleaseDate", response.data.Released);
               movieObject.set("Runtime", response.data.Runtime);
+              movieObject.set("imdbRating", response.data.imdbRating);
+              movieObject.set(
+                "imdbLink",
+                "https://www.imdb.com/title/" + response.data.imdbID
+              );
+              movieObject.set(
+                "Watched",
+                document.getElementById("watchedCheckBox").checked
+              );
 
               movieObject.save().then(
                 (result) => {},
@@ -106,11 +117,17 @@ const Home = () => {
       <div className="notification-success"></div>
       <div className="notification-fail"></div>
       <h1>Movie Tracker Project</h1>
-      <input type="text" placeholder="Movie Name" id="movieNameInput" />
-      <br />
-      <button className="submitBtn" onClick={handleClick}>
-        Save Movie
-      </button>
+      <div className="save-movie-section">
+        <input type="text" placeholder="Movie Name" id="movieNameInput" />
+        <br />
+        <label htmlFor="watchedCheckBox">Have you watched it?</label>
+        <input type="checkbox" name="watched" id="watchedCheckBox" />
+        <br />
+        <button className="submitBtn" onClick={handleClick}>
+          Save Movie
+        </button>
+      </div>
+      <Recommendation />
     </div>
   );
 };
