@@ -44,7 +44,7 @@ const Home = () => {
           // If movie exists on the parse database
           if (
             !parseResults.some(
-              (e) => e.attributes.MovieName === response.data.Title
+              (e) => e.attributes.Title === response.data.Title
             )
           ) {
             // If movie not found
