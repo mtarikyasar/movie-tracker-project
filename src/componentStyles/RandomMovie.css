@@ -6,29 +6,29 @@
   --border-color: #31b381;
 }
 
-.slide-left {
-  width: 100%;
-  margin-top: 20px;
+.random-movie-section {
   position: absolute;
-  left: 100%;
-  animation: scroll 25s linear infinite;
+  margin-top: 100px;
+  left: 0;
 }
 
-.slide-left a {
-  color: var(--border-color);
-  text-decoration: none;
+.random-movie-section h3 {
+  background-color: rgb(150, 150, 150);
+  border-left: 5px solid var(--border-color);
+  padding: 5px;
+  position: absolute;
+  left: 3%;
+  top: -10%;
 }
 
-.slide-left a:hover {
-  color: var(--border-color);
-  text-decoration: none;
+.poster-plot {
+  display: flex;
+  margin-top: 25px;
+  text-align: left;
 }
 
-@keyframes scroll {
-  from {
-    left: 100%;
-  }
-  to {
-    left: -100%;
-  }
+.random-movie-section p {
+  flex: 1;
+  width: 200px;
+  margin-left: 25px;
 }

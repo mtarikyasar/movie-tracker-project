@@ -1,5 +1,6 @@
 import env from "react-dotenv";
 import RandomMovie from "./RandomMovie";
+import "../componentStyles/Recommendation.css";
 
 const Parse = require("parse");
 
@@ -18,7 +19,7 @@ const Recommendation = () => {
   };
 
   return (
-    <div>
+    <div className="recommendation-section">
       <h2>Haven't you watched it yet?</h2>
       <RandomMovie movieNamePromise={getRandomUnwatchedMovie()} />
     </div>

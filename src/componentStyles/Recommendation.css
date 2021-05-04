@@ -1,0 +1,15 @@
+.recommendation-section {
+  background-color: rgb(95, 95, 95);
+  margin-top: 10px;
+  width: 25%;
+  height: 420px;
+}
+
+.recommendation-section h2 {
+  background-color: var(--bg-color-darker);
+  border-left: 5px var(--border-color) solid;
+  color: #fff;
+  padding: 10px;
+  position: absolute;
+  left: 0;
+}

@@ -15,7 +15,7 @@ h1 {
   width: 25%;
   padding: 15px;
   margin: auto;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   box-shadow: 5px 5px 20px #000;
   transition: 0.1s linear;
 }
@@ -27,7 +27,7 @@ h1 {
 input {
   background-color: rgba(189, 189, 189, 0.7);
   border: 1px solid var(--border-color);
-  border-radius: 5px;
+  /* border-radius: 5px; */
   color: #fff;
   font-size: 24px;
   margin: 5px;
@@ -51,7 +51,7 @@ label {
 .submitBtn {
   background-color: rgba(30, 30, 30, 0);
   border: 2px solid var(--border-color);
-  border-radius: 5px;
+  /* border-radius: 5px; */
   color: white;
   font-size: 24px;
   margin: 3px;
@@ -60,7 +60,7 @@ label {
 
 .submitBtn:hover {
   background-color: var(--border-color);
-  border-radius: 10px;
+  /* border-radius: 10px; */
   color: rgb(255, 255, 255);
 }
 
