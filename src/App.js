@@ -57,7 +57,15 @@ function App() {
     <div className="App">
       <Navbar setStep={setStep} />
       {step === 0 ? <Home /> : <MoviesPage moviesList={getMovies()} />}
-      {/* <p>Step: {step}</p> */}
+      <nav className="bottom-bar">
+        <a
+          href="https://github.com/mtarikyasar"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i class="fab fa-github" />
+        </a>
+      </nav>
     </div>
   );
 }

@@ -26,3 +26,19 @@ body {
 .App {
   text-align: center;
 }
+
+.bottom-bar {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: var(--bg-color-darker);
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.fa-github:hover {
+  color: white;
+}

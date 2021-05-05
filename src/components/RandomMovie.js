@@ -28,7 +28,12 @@ const RandomMovie = ({ movieNamePromise }) => {
         />
         <p>
           {plot}
-          <p>IMDB Rating: {imdbRating}</p>
+          <p className={"rating"}>
+            <a href={imdbLink} target="_blank" rel="noreferrer">
+              <i className="fab fa-imdb" />
+            </a>
+            {imdbRating}
+          </p>
         </p>
       </div>
     </div>
