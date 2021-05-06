@@ -63,7 +63,7 @@ function App() {
           target="_blank"
           rel="noreferrer"
         >
-          <i class="fab fa-github" />
+          <i className="fab fa-github" />
         </a>
       </nav>
     </div>

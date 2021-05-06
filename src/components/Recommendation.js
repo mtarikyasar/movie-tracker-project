@@ -1,5 +1,5 @@
 import env from "react-dotenv";
-import RandomMovie from "./RandomMovie";
+import UnwatchedMovies from "./UnwatchedMovies";
 import "../componentStyles/Recommendation.css";
 
 const Parse = require("parse");
@@ -11,17 +11,20 @@ const query = new Parse.Query("Movies");
 const Recommendation = () => {
   const getRandomUnwatchedMovie = async () => {
     query.equalTo("Watched", false);
+    query.limit(4);
     const results = await query.find();
 
-    let randomNumber = Math.floor(Math.random() * results.length);
+    // let randomNumber = Math.floor(Math.random() * results.length);
 
-    return results[randomNumber].attributes;
+    // return results[randomNumber].attributes;
+
+    return results;
   };
 
   return (
     <div className="recommendation-section">
       <h2>Haven't you watched it yet?</h2>
-      <RandomMovie movieNamePromise={getRandomUnwatchedMovie()} />
+      <UnwatchedMovies moviesPromise={getRandomUnwatchedMovie()} />
     </div>
   );
 };

@@ -1,13 +1,9 @@
 :root {
-  --bg-color: #818181;
+  --bg-color: #f0f0f0;
   --bg-color-darker: #3a3a3a;
-  --fg-color: #ffffff;
+  --fg-color: #000000;
   --fg-hover-color: #5ecfa4;
   --border-color: #31b381;
-}
-
-h1 {
-  color: var(--fg-color);
 }
 
 .save-movie-section {
@@ -15,8 +11,8 @@ h1 {
   width: 25%;
   padding: 15px;
   margin: auto;
-  /* border-radius: 20px; */
-  box-shadow: 5px 5px 20px #000;
+  margin-top: 10px;
+  box-shadow: 1px 1px 5px #000;
   transition: 0.1s linear;
 }
 
@@ -40,7 +36,7 @@ input:hover {
 }
 
 label {
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 
 #watchedCheckBox {
@@ -52,7 +48,7 @@ label {
   background-color: rgba(30, 30, 30, 0);
   border: 2px solid var(--border-color);
   /* border-radius: 5px; */
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 24px;
   margin: 3px;
   transition: 0.2s linear;
@@ -71,7 +67,6 @@ label {
 .notification-success {
   background-color: yellowgreen;
   border-left: 4px solid green;
-  border-radius: 10px;
   display: none;
   padding: 10px;
   position: absolute;
@@ -84,7 +79,6 @@ label {
 .notification-fail {
   background-color: rgb(209, 112, 112);
   border-left: 4px solid rgb(255, 0, 0);
-  border-radius: 10px;
   display: none;
   padding: 10px;
   position: absolute;

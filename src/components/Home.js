@@ -116,7 +116,6 @@ const Home = () => {
     <div className="App">
       <div className="notification-success"></div>
       <div className="notification-fail"></div>
-      <h1>Movie Tracker Project</h1>
       <div className="save-movie-section">
         <input type="text" placeholder="Movie Name" id="movieNameInput" />
         <br />

@@ -1,0 +1,56 @@
+:root {
+  --bg-color: #868686;
+  --bg-color-darker: #3a3a3a;
+  --fg-color: #000000;
+  --fg-hover-color: #5ecfa4;
+  --border-color: #31b381;
+}
+
+.random-movie-section {
+  margin-top: 100px;
+  display: flex;
+}
+
+.movie-div {
+  flex: 1;
+  display: flex;
+  background-color: rgb(136, 133, 136);
+  box-shadow: 1px 1px 5px #000;
+  margin: 5px;
+  margin-top: 75px;
+}
+
+.movie-div p {
+  text-align: left;
+  margin-left: 10px;
+}
+
+.movie-information {
+  display: flex;
+  flex-direction: column;
+}
+
+.plot {
+  flex: 5;
+}
+
+.rating {
+  flex: 1;
+}
+
+.movie-div img {
+  border-radius: 0px;
+}
+
+.movie-div img:hover {
+  box-shadow: 1px 1px 10px #f5c518;
+}
+
+.fa-imdb {
+  margin-left: 5px;
+  transition: 0.1s linear;
+}
+
+.fa-imdb:hover {
+  color: #f5c518;
+}
