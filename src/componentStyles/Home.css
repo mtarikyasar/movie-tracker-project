@@ -2,27 +2,29 @@
   --bg-color: #f0f0f0;
   --bg-color-darker: #3a3a3a;
   --fg-color: #000000;
-  --fg-hover-color: #5ecfa4;
-  --border-color: #31b381;
+  --border-color: #fff;
 }
 
 .save-movie-section {
-  background-color: var(--bg-color-darker);
+  background-color: rgba(255, 255, 255, 0.2);
+  /* border: 2px solid white; */
   width: 25%;
   padding: 15px;
   margin: auto;
   margin-top: 10px;
   box-shadow: 1px 1px 5px #000;
   transition: 0.1s linear;
+  backdrop-filter: blur(10px);
 }
 
 .save-movie-section:hover {
   box-shadow: 7px 7px 20px #000;
+  filter: blur(0px);
 }
 
 input {
   background-color: rgba(189, 189, 189, 0.7);
-  border: 1px solid var(--border-color);
+  border: 1px solid #fff;
   /* border-radius: 5px; */
   color: #fff;
   font-size: 24px;
@@ -36,7 +38,7 @@ input:hover {
 }
 
 label {
-  color: rgb(0, 0, 0);
+  color: #fff;
 }
 
 #watchedCheckBox {
@@ -46,18 +48,18 @@ label {
 
 .submitBtn {
   background-color: rgba(30, 30, 30, 0);
-  border: 2px solid var(--border-color);
+  border: 2px solid #fff;
   /* border-radius: 5px; */
-  color: rgb(0, 0, 0);
+  color: #fff;
   font-size: 24px;
   margin: 3px;
   transition: 0.2s linear;
 }
 
 .submitBtn:hover {
-  background-color: var(--border-color);
+  background-color: #fff;
   /* border-radius: 10px; */
-  color: rgb(255, 255, 255);
+  color: #000;
 }
 
 /* Notifications */

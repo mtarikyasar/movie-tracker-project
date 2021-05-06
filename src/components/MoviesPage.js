@@ -21,9 +21,7 @@ const MoviesPage = ({ moviesList }) => {
 
   return (
     <div>
-      <div className="movies">
-        <h1>Movies</h1>
-      </div>
+      <div className="movies">{/* <h1>Movies</h1> */}</div>
 
       {isPending && <LoadingAnimation />}
       <div className="movies-section">
