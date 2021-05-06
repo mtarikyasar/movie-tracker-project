@@ -6,7 +6,7 @@ const UnwatchedMovies = ({ moviesPromise }) => {
   const [isPending, setIsPending] = useState(true);
   useEffect(() => {
     moviesPromise.then((res) => {
-      let div = document.querySelector(".random-movie-section");
+      let div = document.querySelector(".unwatched-movie-section");
 
       // To prevent from rendering twice
       div.innerHTML = "";
@@ -56,7 +56,7 @@ const UnwatchedMovies = ({ moviesPromise }) => {
   return (
     <div>
       {isPending && <LoadingAnimation />}
-      <div className="random-movie-section"></div>
+      <div className="unwatched-movie-section"></div>
     </div>
   );
 };

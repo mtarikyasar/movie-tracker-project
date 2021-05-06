@@ -13,10 +13,10 @@ const Home = () => {
   // Notification Function
   const sendNotification = (element, message) => {
     element.innerHTML = message;
-    element.style.display = "initial";
+    element.classList.toggle("show");
 
     setTimeout(() => {
-      element.style.display = "none";
+      element.classList.toggle("show");
     }, 2000);
   };
 
@@ -123,7 +123,7 @@ const Home = () => {
         <input type="checkbox" name="watched" id="watchedCheckBox" />
         <br />
         <button className="submitBtn" onClick={handleClick}>
-          Save Movie
+          Save
         </button>
       </div>
       <Recommendation />

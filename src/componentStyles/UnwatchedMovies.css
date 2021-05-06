@@ -1,6 +1,7 @@
-.random-movie-section {
+.unwatched-movie-section {
   margin-top: 100px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .movie-div {
@@ -8,7 +9,7 @@
   display: flex;
   background-color: rgb(136, 133, 136);
   box-shadow: 1px 1px 5px #000;
-  margin: 5px;
+  margin: 10px;
   margin-top: 75px;
 }
 
