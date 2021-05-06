@@ -1,11 +1,3 @@
-:root {
-  --bg-color: #868686;
-  --bg-color-darker: #3a3a3a;
-  --fg-color: #000000;
-  --fg-hover-color: #5ecfa4;
-  --border-color: #31b381;
-}
-
 .random-movie-section {
   margin-top: 100px;
   display: flex;

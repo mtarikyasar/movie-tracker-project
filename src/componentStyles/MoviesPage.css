@@ -1,11 +1,3 @@
-:root {
-  --bg-color: #deddde;
-  --bg-color-darker: #fff;
-  --fg-color: #000000;
-  --fg-hover-color: #5ecfa4;
-  --border-color: #31b381;
-}
-
 h1 {
   font-size: 34px;
 }

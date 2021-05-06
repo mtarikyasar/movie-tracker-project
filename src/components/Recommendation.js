@@ -14,16 +14,12 @@ const Recommendation = () => {
     query.limit(4);
     const results = await query.find();
 
-    // let randomNumber = Math.floor(Math.random() * results.length);
-
-    // return results[randomNumber].attributes;
-
     return results;
   };
 
   return (
     <div className="recommendation-section">
-      <h2>Haven't you watched it yet?</h2>
+      <h2>Haven't you watched yet?</h2>
       <UnwatchedMovies moviesPromise={getRandomUnwatchedMovie()} />
     </div>
   );

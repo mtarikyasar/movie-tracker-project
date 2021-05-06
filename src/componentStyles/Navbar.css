@@ -1,11 +1,3 @@
-:root {
-  --bg-color: #818181;
-  --navbar-color: #3a3a3a;
-  --fg-color: #ffffff;
-  --fg-hover-color: #e85a4f;
-  --border-color: #e98074;
-}
-
 body {
   margin: 0;
 }
@@ -35,7 +27,7 @@ body {
 }
 
 .movie-wheel div {
-  background: rgb(0, 0, 0);
+  background: #000;
   border-radius: 10px;
   position: absolute;
   width: 7px;
@@ -82,7 +74,7 @@ body {
 .links button {
   background-color: rgba(0, 0, 0, 0);
   border: none;
-  color: #fff;
+  color: var(--fg-color);
   margin: 0px 10px;
   font-size: 18px;
   font-weight: 700;
