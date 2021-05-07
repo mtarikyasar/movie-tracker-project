@@ -29,7 +29,7 @@ const Home = () => {
     const parseResults = await query.find();
 
     // Get input value
-    let movieName = document.getElementById("movieNameInput").value;
+    let movieName = document.getElementById("movie-name-input").value;
 
     // If input value is not empty
     if (movieName !== "") {
@@ -76,7 +76,7 @@ const Home = () => {
               );
               movieObject.set(
                 "Watched",
-                document.getElementById("watchedCheckBox").checked
+                document.getElementById("watched-check-box").checked
               );
 
               movieObject.save().then(
@@ -117,12 +117,12 @@ const Home = () => {
       <div className="notification-success"></div>
       <div className="notification-fail"></div>
       <div className="save-movie-section">
-        <input type="text" placeholder="Movie Name" id="movieNameInput" />
+        <input type="text" placeholder="Movie Name" id="movie-name-input" />
         <br />
-        <label htmlFor="watchedCheckBox">Have you watched it?</label>
-        <input type="checkbox" name="watched" id="watchedCheckBox" />
+        <label htmlFor="watched-check-box">Have you watched it?</label>
+        <input type="checkbox" name="watched" id="watched-check-box" />
         <br />
-        <button className="submitBtn" onClick={handleClick}>
+        <button className="submit-btn" onClick={handleClick}>
           Save
         </button>
       </div>

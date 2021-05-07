@@ -32,12 +32,12 @@ label {
   color: #fff;
 }
 
-#watchedCheckBox {
+#watched-check-box {
   width: 15px;
   height: 15px;
 }
 
-.submitBtn {
+.submit-btn {
   background-color: rgba(30, 30, 30, 0);
   border: 2px solid #fff;
   color: #fff;
@@ -46,7 +46,7 @@ label {
   transition: 0.2s linear;
 }
 
-.submitBtn:hover {
+.submit-btn:hover {
   background-color: #fff;
   color: #000;
 }
