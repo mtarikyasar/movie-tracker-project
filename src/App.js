@@ -1,15 +1,15 @@
 import "./App.css";
-import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 
-import { useState } from "react";
 import MoviesPage from "./components/MoviesPage";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import env from "react-dotenv";
 const Parse = require("parse");
 
 Parse.serverURL = "https://parseapi.back4app.com";
 Parse.initialize(env.PARSE_APP_ID, env.PARSE_JS_KEY, env.PARSE_MASTER_KEY);
+
 const query = new Parse.Query("Movies");
 
 async function getMovies() {
@@ -51,22 +51,52 @@ async function getMovies() {
 }
 
 function App() {
-  const [step, setStep] = useState(0);
-
   return (
-    <div className="App">
-      <Navbar setStep={setStep} />
-      {step === 0 ? <Home /> : <MoviesPage moviesList={getMovies()} />}
-      <nav className="bottom-bar">
-        <a
-          href="https://github.com/mtarikyasar"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <i className="fab fa-github" />
-        </a>
-      </nav>
-    </div>
+    <Router>
+      <div className="App">
+        <nav className="navbar links">
+          <button>
+            <Link to="">Home</Link>
+          </button>
+          <button>
+            <Link to="/movies">Movies</Link>
+          </button>
+        </nav>
+        <nav className="bottom-bar">
+          <a
+            href="https://github.com/mtarikyasar"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i className="fab fa-github" />
+          </a>
+        </nav>
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/movies">
+            <MoviesPage moviesList={getMovies()} />
+          </Route>
+          <Route path="">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+
+    // <div className="App">
+    //   <Navbar setStep={setStep} />
+    //   {step === 0 ? <Home /> : <MoviesPage moviesList={getMovies()} />}
+    //   <nav className="bottom-bar">
+    //     <a
+    //       href="https://github.com/mtarikyasar"
+    //       target="_blank"
+    //       rel="noreferrer"
+    //     >
+    //       <i className="fab fa-github" />
+    //     </a>
+    //   </nav>
+    // </div>
   );
 }
 

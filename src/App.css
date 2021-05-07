@@ -25,6 +25,18 @@ body {
   background-size: 100%;
 }
 
+.navbar {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  margin: 0px 10px;
+  padding: 5px;
+  font-size: 20px;
+}
+
 .App {
   text-align: center;
 }
@@ -38,8 +50,13 @@ body {
 }
 
 a {
-  color: #000;
+  color: var(--fg-color);
   text-decoration: none;
+  transition: 0.2s linear;
+}
+
+a:hover {
+  color: var(--fg-hover-color);
 }
 
 .fa-github:hover {
