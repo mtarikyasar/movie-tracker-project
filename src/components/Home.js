@@ -20,7 +20,6 @@ const Home = () => {
     }, 2000);
   };
 
-  // Click handle function
   const handleClick = async () => {
     const MovieClass = Parse.Object.extend("Movies");
 

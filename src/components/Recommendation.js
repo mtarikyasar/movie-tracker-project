@@ -17,7 +17,6 @@ const Recommendation = () => {
 
     while (results.length < 4) {
       let randomNumber = Math.floor(Math.random() * tempResults.length);
-      console.log(randomNumber);
       if (randomNumberArray.indexOf(randomNumber) === -1) {
         randomNumberArray.push(randomNumber);
         results.push(tempResults[randomNumber]);

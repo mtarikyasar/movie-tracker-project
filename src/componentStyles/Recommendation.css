@@ -12,6 +12,5 @@
   border-left: 5px var(--border-color) solid;
   color: #fff;
   padding: 10px;
-  position: absolute;
-  left: 0;
+  text-align: left;
 }

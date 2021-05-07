@@ -66,11 +66,6 @@ body {
 
 /* -------------------------- */
 
-.navigation {
-  position: absolute;
-  right: 0%;
-}
-
 .links button {
   background-color: rgba(0, 0, 0, 0);
   border: none;

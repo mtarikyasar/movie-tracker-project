@@ -1,5 +1,4 @@
 .unwatched-movie-section {
-  margin-top: 100px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -10,7 +9,6 @@
   background-color: rgb(136, 133, 136);
   box-shadow: 1px 1px 5px #000;
   margin: 10px;
-  margin-top: 75px;
 }
 
 .movie-div p {

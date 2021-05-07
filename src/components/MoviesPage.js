@@ -9,13 +9,9 @@ const MoviesPage = ({ moviesList }) => {
 
   const renderMovies = (e) => {
     let res = e.split(" ");
-    return <Movie poster={res[0]} imdbLink={res[1]} watched={res[2]} />;
-  };
-
-  const resetMovies = () => {
-    let moviesSection = document.querySelector(".movies-section").children;
-
-    for (let i = 0; i < moviesSection.length; i++) {}
+    return (
+      <Movie poster={res[0]} imdbLink={res[1]} watched={res[2]} key={res[1]} />
+    );
   };
 
   const showUnwatchedMovies = (element) => {
@@ -47,9 +43,11 @@ const MoviesPage = ({ moviesList }) => {
       }
     }
 
-    choice === "watched"
-      ? showWatchedMovies(moviesSection)
-      : showUnwatchedMovies(moviesSection);
+    if (choice !== "show-all") {
+      choice === "watched"
+        ? showWatchedMovies(moviesSection)
+        : showUnwatchedMovies(moviesSection);
+    }
   };
 
   useEffect(() => {
@@ -61,13 +59,13 @@ const MoviesPage = ({ moviesList }) => {
 
   return (
     <div>
-      <div className="movies">{/* <h1>Movies</h1> */}</div>
       <div className="movies-section">
         <nav className="navbar">
           <label htmlFor="movie-situation" className="movie-selection-list">
             Show selected movies:
           </label>
-          <select name="movies" id="movie-situation" id="movie-selection">
+          <select name="movies" id="movie-selection">
+            <option value="show-all">Show all</option>
             <option value="watched">Watched movies</option>
             <option value="unwatched">Unwatched movies</option>
           </select>
