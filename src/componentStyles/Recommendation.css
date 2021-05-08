@@ -1,14 +1,13 @@
 .recommendation-section {
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
-  margin-top: 30px;
-  width: 100%;
   height: auto;
   padding-bottom: 20px;
+  margin-top: 30px;
+  width: 100%;
 }
 
 .recommendation-section h2 {
-  /* background-color: var(--bg-color-darker); */
   border-left: 5px var(--border-color) solid;
   color: #fff;
   padding: 10px;
