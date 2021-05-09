@@ -22,10 +22,19 @@ select {
   width: 100px;
 }
 
+.movies-section {
+  backdrop-filter: blur(10px);
+}
+
+.movie {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
 img {
-  border-radius: 20px;
   box-shadow: 2px 2px 10px black;
-  display: initial;
   height: 250px;
   margin: 10px;
   transition: 0.2s linear;
@@ -33,9 +42,45 @@ img {
 }
 
 .show-movie {
-  animation: fadeIn 1s;
   display: none;
-  -webkit-animation: fadeIn 1s;
+}
+
+.button-section {
+  display: flex;
+  backdrop-filter: blur(10px);
+  border: 2px solid #fff;
+  bottom: 13px;
+  position: relative;
+  text-align: center;
+}
+
+.change-movie-state {
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  transition: 0.2s linear;
+}
+
+.fa-trash-alt {
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  transition: 0.2s linear;
+}
+
+.change-movie-state:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.fa-trash-alt:hover {
+  background-color: #f00;
+}
+
+a:focus + .change-movie-state {
+  display: block;
 }
 
 /* If movie is not watched glow is red */
@@ -48,4 +93,39 @@ img {
 .true img:hover {
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgb(0, 255, 0);
+}
+
+/* Notifications */
+
+/* Success Notification */
+
+.notification-success-movies-page {
+  background-color: rgb(168, 190, 119);
+  border-left: 4px solid #0f0;
+  opacity: 0;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  transition: opacity 0.1s linear;
+  top: 10px;
+  width: 18%;
+  z-index: 1;
+}
+
+/* Fail Notification */
+
+.notification-fail-movies-page {
+  background-color: rgb(209, 112, 112);
+  border-left: 4px solid #f00;
+  opacity: 0;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  transition: opacity 0.1s linear;
+  top: 15px;
+  width: 18%;
+}
+
+.show {
+  opacity: 1;
 }

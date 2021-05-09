@@ -59,23 +59,25 @@ const MoviesPage = ({ moviesList }) => {
 
   return (
     <div>
+      <div className="notification-success-movies-page"></div>
+      <div className="notification-fail-movies-page"></div>
+      <nav className="navbar">
+        <label htmlFor="movie-situation" className="movie-selection-list">
+          Show selected movies:
+        </label>
+        <select name="movies" id="movie-selection">
+          <option value="show-all">Show all</option>
+          <option value="watched">Watched movies</option>
+          <option value="unwatched">Unwatched movies</option>
+        </select>
+        <input
+          type="button"
+          value="Select"
+          onClick={showMoviesByWatchedProperty}
+          className="select-btn"
+        />
+      </nav>
       <div className="movies-section">
-        <nav className="navbar">
-          <label htmlFor="movie-situation" className="movie-selection-list">
-            Show selected movies:
-          </label>
-          <select name="movies" id="movie-selection">
-            <option value="show-all">Show all</option>
-            <option value="watched">Watched movies</option>
-            <option value="unwatched">Unwatched movies</option>
-          </select>
-          <input
-            type="button"
-            value="Select"
-            onClick={showMoviesByWatchedProperty}
-            className="select-btn"
-          />
-        </nav>
         {isPending && <LoadingAnimation />}
         {posterAndLink.map((e) => renderMovies(e))}
       </div>

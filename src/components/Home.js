@@ -20,7 +20,7 @@ const Home = () => {
     }, 2000);
   };
 
-  const handleClick = async () => {
+  const saveMovie = async () => {
     const MovieClass = Parse.Object.extend("Movies");
 
     // Getting database to check if movie exists
@@ -28,8 +28,11 @@ const Home = () => {
     const parseResults = await query.find();
 
     // Get input value
-    let movieName = document.getElementById("movie-name-input").value;
+    let inputField = document.getElementById("movie-name-input");
+    let movieName = inputField.value;
+    inputField.value = "";
 
+    document.getElementById("");
     // If input value is not empty
     if (movieName !== "") {
       axios
@@ -121,7 +124,7 @@ const Home = () => {
         <label htmlFor="watched-check-box">Have you watched it?</label>
         <input type="checkbox" name="watched" id="watched-check-box" />
         <br />
-        <button className="submit-btn" onClick={handleClick}>
+        <button className="submit-btn" onClick={saveMovie}>
           Save
         </button>
       </div>

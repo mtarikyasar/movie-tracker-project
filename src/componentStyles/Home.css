@@ -9,11 +9,6 @@
   width: 25%;
 }
 
-.save-movie-section:hover {
-  box-shadow: 7px 7px 20px #000;
-  filter: blur(0px);
-}
-
 input {
   background-color: rgba(189, 189, 189, 0.7);
   border: 1px solid #fff;

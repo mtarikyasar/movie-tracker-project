@@ -34,6 +34,7 @@ body {
   border: none;
   margin: 0px 10px;
   padding: 5px;
+  padding-bottom: 7px;
   font-size: 20px;
 }
 
@@ -55,10 +56,24 @@ a {
   transition: 0.2s linear;
 }
 
-a:hover {
-  color: var(--fg-hover-color);
+.navbar a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: rgb(252, 252, 252);
+  transition: width 0.3s;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.fa-github {
+  font-size: 18px;
+  transition: 0.2s linear;
 }
 
 .fa-github:hover {
-  color: white;
+  color: var(--fg-hover-color);
 }
