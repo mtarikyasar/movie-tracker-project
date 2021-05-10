@@ -8,9 +8,16 @@ const MoviesPage = ({ moviesList }) => {
   const [isPending, setIsPending] = useState(true);
 
   const renderMovies = (e) => {
-    let res = e.split(" ");
+    let splitValue = "#split#here#";
+    let res = e.split(splitValue);
     return (
-      <Movie poster={res[0]} imdbLink={res[1]} watched={res[2]} key={res[1]} />
+      <Movie
+        poster={res[0]}
+        imdbLink={res[1]}
+        watched={res[2]}
+        title={res[3]}
+        key={res[1]}
+      />
     );
   };
 
@@ -50,6 +57,12 @@ const MoviesPage = ({ moviesList }) => {
     }
   };
 
+  const saveWatchlist = () => {
+    let addWatchlistSection = document.querySelector(".add-watchlist-section");
+
+    addWatchlistSection.classList.toggle("show-watchlist-section");
+  };
+
   useEffect(() => {
     moviesList.then((resp) => {
       setposterAndLink(resp.posters);
@@ -77,9 +90,18 @@ const MoviesPage = ({ moviesList }) => {
           className="select-btn"
         />
       </nav>
-      <div className="movies-section">
-        {isPending && <LoadingAnimation />}
-        {posterAndLink.map((e) => renderMovies(e))}
+      <div className="main-section">
+        <div className="movies-section">
+          {isPending && <LoadingAnimation />}
+          {posterAndLink.map((e) => renderMovies(e))}
+        </div>
+        <div className="add-watchlist-section">
+          <p>Add to watchlist:</p>
+          <ul className="movie-names"></ul>
+          <button className="save-watchlist-btn" onClick={saveWatchlist}>
+            Save
+          </button>
+        </div>
       </div>
     </div>
   );

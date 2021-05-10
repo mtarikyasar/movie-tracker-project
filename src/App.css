@@ -27,6 +27,7 @@ body {
 
 .navbar {
   background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .navbar button {
@@ -43,11 +44,12 @@ body {
 }
 
 .bottom-bar {
-  position: absolute;
   width: 100%;
+  position: fixed;
   bottom: 0;
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
+  text-align: center;
 }
 
 a {
@@ -62,7 +64,7 @@ a {
   width: 0;
   height: 2px;
   background: rgb(252, 252, 252);
-  transition: width 0.3s;
+  transition: width 0.1s;
 }
 
 .navbar a:hover::after {

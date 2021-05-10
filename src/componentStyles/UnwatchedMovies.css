@@ -4,7 +4,7 @@
 }
 
 .movie-div {
-  background-color: rgb(136, 133, 136);
+  backdrop-filter: blur(100px);
   box-shadow: 1px 1px 5px #000;
   display: flex;
   flex: 1;
@@ -12,6 +12,7 @@
 }
 
 .movie-div p {
+  color: #fff;
   margin-left: 10px;
   text-align: left;
 }
