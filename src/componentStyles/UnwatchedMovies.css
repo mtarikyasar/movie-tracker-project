@@ -4,6 +4,7 @@
 }
 
 .movie-div {
+  background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(100px);
   box-shadow: 1px 1px 5px #000;
   display: flex;
