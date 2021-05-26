@@ -48,17 +48,6 @@ body {
   display: block;
 }
 
-footer,
-.app::after {
-  height: 20px;
-}
-
-footer {
-  width: 100%;
-  text-align: center;
-  background-color: #eee;
-}
-
 a {
   color: rgb(71, 71, 71);
   text-decoration: none;
@@ -76,13 +65,4 @@ a {
 
 .navbar a:hover::after {
   width: 100%;
-}
-
-.fa-github {
-  font-size: 18px;
-  transition: 0.2s linear;
-}
-
-.fa-github:hover {
-  color: var(--button-color);
 }
