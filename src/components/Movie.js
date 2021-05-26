@@ -107,6 +107,7 @@ const Movie = ({ poster, imdbLink, watched, title }) => {
           onClick={deleteMovie}
         ></button>
       </div>
+      <p hidden="true">{title}</p>
     </div>
   );
 };

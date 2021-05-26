@@ -4,16 +4,15 @@
 }
 
 .movie-div {
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(100px);
-  box-shadow: 1px 1px 5px #000;
+  background-color: rgb(184, 183, 183);
+  border-radius: 5px;
   display: flex;
   flex: 1;
   margin: 10px;
 }
 
 .movie-div p {
-  color: #fff;
+  color: rgb(0, 0, 0);
   margin-left: 10px;
   text-align: left;
 }
@@ -33,12 +32,8 @@
 }
 
 .movie-div img {
-  border-radius: 0px;
+  border-radius: 5px;
   flex: 1;
-}
-
-.movie-div img:hover {
-  box-shadow: 1px 1px 10px #f5c518;
 }
 
 .fa-imdb {

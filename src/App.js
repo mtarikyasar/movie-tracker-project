@@ -57,7 +57,7 @@ async function getMovies() {
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="app">
         <nav className="navbar links">
           <button>
             <Link to="">Home</Link>
@@ -70,8 +70,6 @@ function App() {
           </button>
         </nav>
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/movies">
             <MoviesPage moviesList={getMovies()} />
@@ -84,22 +82,8 @@ function App() {
           </Route>
         </Switch>
       </div>
-
-      <footer className="bottom-bar">
-        <a
-          href="https://github.com/mtarikyasar"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <i className="fab fa-github" />
-        </a>
-      </footer>
     </Router>
 
-    // <div className="App">
-    //   <Navbar setStep={setStep} />
-    //   {step === 0 ? <Home /> : <MoviesPage moviesList={getMovies()} />}
-    //   <nav className="bottom-bar">
     //     <a
     //       href="https://github.com/mtarikyasar"
     //       target="_blank"

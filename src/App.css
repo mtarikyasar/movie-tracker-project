@@ -1,9 +1,10 @@
 :root {
-  --bg-color: #f0f0f0;
+  --bg-color: #adadad;
   --bg-color-darker: #3a3a3a;
-  --fg-color: #fff;
-  --fg-hover-color: #5ecfa4;
-  --border-color: #31b381;
+  --fg-color: rgb(0, 0, 0);
+  --button-color: rgb(84, 141, 226);
+  --fg-hover-color: #ffffff;
+  --border-color: #498be0;
 }
 
 html,
@@ -21,13 +22,10 @@ body {
 
 body {
   background-color: var(--bg-color);
-  background-image: url("./componentStyles/background/luke-peterson-PvQPK0KQqvY-unsplash.jpg");
-  background-size: 100%;
 }
 
 .navbar {
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
+  background-color: var(--fg-hover-color);
 }
 
 .navbar button {
@@ -39,20 +37,30 @@ body {
   font-size: 20px;
 }
 
-.App {
+.app {
   text-align: center;
+  min-height: 100%;
+  margin-bottom: -20px;
 }
 
-.bottom-bar {
+.app::after {
+  content: "";
+  display: block;
+}
+
+footer,
+.app::after {
+  height: 20px;
+}
+
+footer {
   width: 100%;
-  position: fixed;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
   text-align: center;
+  background-color: #eee;
 }
 
 a {
-  color: var(--fg-color);
+  color: rgb(71, 71, 71);
   text-decoration: none;
   transition: 0.2s linear;
 }
@@ -62,7 +70,7 @@ a {
   display: block;
   width: 0;
   height: 2px;
-  background: rgb(252, 252, 252);
+  background: rgb(70, 163, 238);
   transition: width 0.1s;
 }
 
@@ -76,5 +84,5 @@ a {
 }
 
 .fa-github:hover {
-  color: var(--fg-hover-color);
+  color: var(--button-color);
 }
