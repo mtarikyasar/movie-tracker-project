@@ -1,7 +1,8 @@
 import "./App.css";
-import HomePage from "./components/HomePage";
-import MoviesPage from "./components/MoviesPage";
-import WatchlistPage from "./components/WatchlistPage";
+import HomePage from "./pages/HomePage";
+import MoviesPage from "./pages/MoviesPage";
+import WatchlistPage from "./pages/WatchlistPage";
+import MovieDetailPage from "./pages/MovieDetailPage";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -76,6 +77,9 @@ function App() {
           </Route>
           <Route path="/watchlist">
             <WatchlistPage />
+          </Route>
+          <Route path="/moviedetails">
+            <MovieDetailPage />
           </Route>
           <Route path="">
             <HomePage />

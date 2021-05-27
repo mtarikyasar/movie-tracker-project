@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../componentStyles/MoviesPage.css";
-import Movie from "./Movie";
-import LoadingAnimation from "./LoadingAnimation";
+import Movie from "../components/Movie";
+import LoadingAnimation from "../components/LoadingAnimation";
 
 const MoviesPage = ({ moviesList }) => {
   const [posterAndLink, setposterAndLink] = useState([]);
@@ -43,13 +44,21 @@ const MoviesPage = ({ moviesList }) => {
     let splitValue = "#split#here#";
     let res = e.split(splitValue);
     return (
-      <Movie
-        poster={res[0]}
-        imdbLink={res[1]}
-        watched={res[2]}
-        title={res[3]}
+      <Link
+        to={{
+          pathname: "/moviedetails",
+          state: res[3],
+        }}
         key={res[1]}
-      />
+      >
+        <Movie
+          poster={res[0]}
+          imdbLink={res[1]}
+          watched={res[2]}
+          title={res[3]}
+          key={res[1]}
+        />
+      </Link>
     );
   };
 

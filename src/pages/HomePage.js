@@ -1,6 +1,6 @@
 import env from "react-dotenv";
 import "../componentStyles/HomePage.css";
-import Recommendation from "./Recommendation.js";
+import Recommendation from "../components/Recommendation";
 
 const axios = require("axios");
 const Parse = require("parse");
@@ -121,7 +121,9 @@ const HomePage = () => {
       <div className="save-movie-section">
         <input type="text" placeholder="Movie Name" id="movie-name-input" />
         <br />
-        <label htmlFor="watched-check-box">Have you watched it?</label>
+        <label htmlFor="watched-check-box">
+          Have you watched it? (Leave empty for "No")
+        </label>
         <input type="checkbox" name="watched" id="watched-check-box" />
         <br />
         <button className="submit-btn" onClick={saveMovie}>
