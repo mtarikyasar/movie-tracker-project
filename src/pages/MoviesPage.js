@@ -47,7 +47,7 @@ const MoviesPage = ({ moviesList }) => {
       <Link
         to={{
           pathname: "/moviedetails",
-          state: res[3],
+          state: { name: res[3] },
         }}
         key={res[1]}
       >
