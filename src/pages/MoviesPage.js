@@ -16,7 +16,7 @@ const MoviesPage = ({ moviesList }) => {
   const testFunction = (event) => {
     let index = event.target.selectedIndex;
     let moviesSection = document.querySelector(".movies-section").children;
-    console.log(event.target.selectedIndex);
+    console.log(moviesSection);
 
     for (let i = 0; i < moviesSection.length; i++) {
       if (moviesSection[i].className.includes("show-movie")) {
@@ -63,8 +63,9 @@ const MoviesPage = ({ moviesList }) => {
   };
 
   const showUnwatchedMovies = (element) => {
+    console.log(element);
     for (let i = 0; i < element.length; i++) {
-      if (element[i].className.includes("true")) {
+      if (element[i].children[0].className.includes("true")) {
         element[i].classList.toggle("show-movie");
       }
     }
@@ -72,7 +73,7 @@ const MoviesPage = ({ moviesList }) => {
 
   const showWatchedMovies = (element) => {
     for (let i = 0; i < element.length; i++) {
-      if (element[i].className.includes("false")) {
+      if (element[i].children[0].className.includes("false")) {
         element[i].classList.toggle("show-movie");
       }
     }
@@ -95,9 +96,10 @@ const MoviesPage = ({ moviesList }) => {
       for (let i = 0; i < moviesSection.children.length; i++) {
         moviesSection.children[i].hidden = false;
 
+        console.log(moviesSection.children);
         let potName = moviesSection.children[
           i
-        ].childNodes[2].innerHTML.toLowerCase();
+        ].childNodes[0].innerHTML.toLowerCase();
 
         if (!potName.includes(movieNameState)) {
           moviesSection.children[i].hidden = true;

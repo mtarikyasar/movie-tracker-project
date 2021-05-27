@@ -63,9 +63,9 @@ const Movie = ({ poster, imdbLink, watched, title }) => {
       }
 
       if (!movieNamesList.includes(title)) {
-        let posterLink =
-          e.target.parentElement.parentElement.children[0].children[0].src;
-        let imdbLink2 = e.target.parentElement.parentElement.children[0].href;
+        // let posterLink =
+        //   e.target.parentElement.parentElement.children[0].children[0].src;
+        // let imdbLink2 = e.target.parentElement.parentElement.children[0].href;
 
         let movieName = document.createElement("li");
         movieName.innerHTML = title;
@@ -75,9 +75,9 @@ const Movie = ({ poster, imdbLink, watched, title }) => {
     }
     // If there is no movie in the list
     else {
-      let posterLink =
-        e.target.parentElement.parentElement.children[0].children[0].src;
-      let imdbLink2 = e.target.parentElement.parentElement.children[0].href;
+      // let posterLink =
+      //   e.target.parentElement.parentElement.children[0].children[0].src;
+      // let imdbLink2 = e.target.parentElement.parentElement.children[0].href;
 
       let movieName = document.createElement("li");
       movieName.innerHTML = title;
@@ -91,9 +91,7 @@ const Movie = ({ poster, imdbLink, watched, title }) => {
 
   return (
     <div className={classes}>
-      <a href={imdbLink} target="_blank" rel="noreferrer" key={imdbLink}>
-        <img src={poster} alt="" key={poster + 1} />
-      </a>
+      <img src={poster} alt="" key={poster + 1} />
       <div className="button-section">
         <button
           className="fas fa-plus add-watchlist-btn"
@@ -107,7 +105,7 @@ const Movie = ({ poster, imdbLink, watched, title }) => {
           onClick={deleteMovie}
         ></button>
       </div>
-      <p hidden="true">{title}</p>
+      <p hidden={true}>{title}</p>
     </div>
   );
 };

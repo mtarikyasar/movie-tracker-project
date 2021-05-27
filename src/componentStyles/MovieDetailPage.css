@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.movie-detail {
+  background-color: rgb(218, 218, 218);
+  text-align: left;
+  display: flex;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.bottom-line {
+  border-bottom: 3px solid var(--button-color);
+  width: 30%;
+}
+
+.left-div {
+  flex: 1;
+  margin: 10px;
+}
+
+.title {
+  margin-left: 10px;
+}
+
+.poster {
+  height: 300px;
+  width: 175px;
+  border-radius: 5px;
+  border: 1px solid rgb(88, 88, 88);
+}
+
+.right-div {
+  flex: 5;
+  margin: 10px;
+}
+
+.right-div p {
+  margin-top: 30px;
+}
+
+.right-div .plot {
+  font-size: 20px;
+}
+
+.director {
+}
