@@ -9,7 +9,7 @@ const axios = require("axios");
 const MovieDetailPage = () => {
   const [isPending, setIsPending] = useState(true);
   const location = useLocation();
-  const { name } = location.state;
+  const { name, watched } = location.state;
 
   useEffect(() => {
     axios
@@ -35,6 +35,13 @@ const MovieDetailPage = () => {
         let director = document.createElement("p");
         director.innerHTML = `Director: ${response.data.Director}`;
         director.className = "director bottom-line";
+
+        let imdbLink = document.createElement("a");
+        imdbLink.href = `https://www.imdb.com/title/${response.data.imdbID}`;
+        imdbLink.className = "imdb-link";
+        imdbLink.innerHTML = "IMDB Page";
+        imdbLink.target = "_blank";
+        imdbLink.rel = "noreferrer";
 
         let writer = document.createElement("p");
         writer.innerHTML = `Writer: ${response.data.Writer}`;
@@ -68,8 +75,15 @@ const MovieDetailPage = () => {
         genres.innerHTML = `Genres: ${response.data.Genre}`;
         genres.className = "genres bottom-line";
 
+        let watchedSit = document.createElement("p");
+        watchedSit.innerHTML = watched
+          ? "You have watched this movie."
+          : "You haven't watched this movie.";
+        watchedSit.className = "watched-situation";
+
         leftDiv.appendChild(movieTitle);
         leftDiv.appendChild(poster);
+        leftDiv.appendChild(imdbLink);
         rightDiv.appendChild(plot);
         rightDiv.appendChild(director);
         rightDiv.appendChild(writer);
@@ -78,6 +92,7 @@ const MovieDetailPage = () => {
         rightDiv.appendChild(genres);
         rightDiv.appendChild(runtime);
         rightDiv.appendChild(releaseDate);
+        rightDiv.appendChild(watchedSit);
 
         movieDetails.appendChild(leftDiv);
         movieDetails.appendChild(rightDiv);
@@ -87,6 +102,12 @@ const MovieDetailPage = () => {
       .catch((err) => {
         console.log(err);
       });
+
+    return (
+      <div>
+        <h2>Hello There</h2>
+      </div>
+    );
   });
 
   return (

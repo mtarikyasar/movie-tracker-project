@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import "../componentStyles/MoviesPage.css";
 import Movie from "../components/Movie";
 import LoadingAnimation from "../components/LoadingAnimation";
@@ -13,7 +12,7 @@ const MoviesPage = ({ moviesList }) => {
     setMovieNameState(event.target.value.toLowerCase());
   };
 
-  const testFunction = (event) => {
+  const showSelectedMovies = (event) => {
     let index = event.target.selectedIndex;
     let moviesSection = document.querySelector(".movies-section").children;
     console.log(moviesSection);
@@ -44,28 +43,20 @@ const MoviesPage = ({ moviesList }) => {
     let splitValue = "#split#here#";
     let res = e.split(splitValue);
     return (
-      <Link
-        to={{
-          pathname: "/moviedetails",
-          state: { name: res[3] },
-        }}
+      <Movie
+        poster={res[0]}
+        imdbLink={res[1]}
+        watched={res[2]}
+        title={res[3]}
         key={res[1]}
-      >
-        <Movie
-          poster={res[0]}
-          imdbLink={res[1]}
-          watched={res[2]}
-          title={res[3]}
-          key={res[1]}
-        />
-      </Link>
+      />
     );
   };
 
   const showUnwatchedMovies = (element) => {
     console.log(element);
     for (let i = 0; i < element.length; i++) {
-      if (element[i].children[0].className.includes("true")) {
+      if (element[i].className.includes("true")) {
         element[i].classList.toggle("show-movie");
       }
     }
@@ -73,7 +64,7 @@ const MoviesPage = ({ moviesList }) => {
 
   const showWatchedMovies = (element) => {
     for (let i = 0; i < element.length; i++) {
-      if (element[i].children[0].className.includes("false")) {
+      if (element[i].className.includes("false")) {
         element[i].classList.toggle("show-movie");
       }
     }
@@ -129,7 +120,11 @@ const MoviesPage = ({ moviesList }) => {
         <label htmlFor="movie-situation" className="movie-selection-list">
           Show selected movies:
         </label>
-        <select name="movies" id="movie-selection" onChange={testFunction}>
+        <select
+          name="movies"
+          id="movie-selection"
+          onChange={showSelectedMovies}
+        >
           <option value="show-all">Show all</option>
           <option value="watched">Watched movies</option>
           <option value="unwatched">Unwatched movies</option>

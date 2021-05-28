@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import env from "react-dotenv";
 const Parse = require("parse");
 
@@ -91,7 +92,15 @@ const Movie = ({ poster, imdbLink, watched, title }) => {
 
   return (
     <div className={classes}>
-      <img src={poster} alt="" key={poster + 1} />
+      <Link
+        to={{
+          pathname: "/moviedetails",
+          state: { name: title, watched: watched },
+        }}
+        key={imdbLink}
+      >
+        <img src={poster} alt="" key={poster + 1} />
+      </Link>
       <div className="button-section">
         <button
           className="fas fa-plus add-watchlist-btn"
