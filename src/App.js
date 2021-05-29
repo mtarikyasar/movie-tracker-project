@@ -87,16 +87,6 @@ function App() {
         </Switch>
       </div>
     </Router>
-
-    //     <a
-    //       href="https://github.com/mtarikyasar"
-    //       target="_blank"
-    //       rel="noreferrer"
-    //     >
-    //       <i className="fab fa-github" />
-    //     </a>
-    //   </nav>
-    // </div>
   );
 }
 

@@ -87,10 +87,10 @@ const MoviesPage = ({ moviesList }) => {
       for (let i = 0; i < moviesSection.children.length; i++) {
         moviesSection.children[i].hidden = false;
 
-        console.log(moviesSection.children);
         let potName = moviesSection.children[
           i
-        ].childNodes[0].innerHTML.toLowerCase();
+        ].childNodes[2].innerHTML.toLowerCase();
+        console.log(potName);
 
         if (!potName.includes(movieNameState)) {
           moviesSection.children[i].hidden = true;
