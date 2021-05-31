@@ -1,7 +1,8 @@
 :root {
   --bg-color: #adadad;
   --bg-color-darker: #3a3a3a;
-  --fg-color: rgb(0, 0, 0);
+  --fg-color: #000;
+  --button-fg-color: #fff;
   --button-color: rgb(84, 141, 226);
   --fg-hover-color: #ffffff;
   --border-color: #498be0;

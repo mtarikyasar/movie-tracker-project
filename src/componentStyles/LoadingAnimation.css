@@ -7,7 +7,7 @@
 
 .lds-ellipsis div {
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
-  background: #fff;
+  background: var(--fg-color);
   border-radius: 50%;
   height: 13px;
   position: absolute;
