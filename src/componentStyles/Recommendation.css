@@ -8,7 +8,7 @@
 }
 
 .recommendation-section h2 {
-  border-left: 5px var(--border-color) solid;
+  border-left: 5px var(--button-color) solid;
   border-radius: 5px 0px;
   color: var(--fg-color);
   padding: 10px;
