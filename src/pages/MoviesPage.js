@@ -7,6 +7,7 @@ const MoviesPage = ({ moviesList }) => {
   const [posterAndLink, setposterAndLink] = useState([]);
   const [isPending, setIsPending] = useState(true);
   const [movieNameState, setMovieNameState] = useState("");
+  const [watchlist, setWatchlist] = useState([]);
 
   const searchFunction = (event) => {
     setMovieNameState(event.target.value.toLowerCase());
@@ -71,6 +72,15 @@ const MoviesPage = ({ moviesList }) => {
   const saveWatchlist = () => {
     let addWatchlistSection = document.querySelector(".add-watchlist-section");
 
+    console.log(addWatchlistSection.children[1]);
+    let watchlistArray = [];
+    for (let i = 0; i < addWatchlistSection.children[1].children.length; i++) {
+      watchlistArray.push(
+        addWatchlistSection.children[1].children[i].innerHTML
+      );
+    }
+
+    setWatchlist(watchlistArray);
     addWatchlistSection.classList.toggle("show-watchlist-section");
   };
 

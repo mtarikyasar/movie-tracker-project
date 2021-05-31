@@ -2,13 +2,16 @@
   --bg-color: #adadad;
   --bg-color-darker: #c2c2c2;
   --fg-color: #000;
-  --button-fg-color: #fff;
-  --accent-color: rgb(84, 141, 226);
   --fg-hover-color: #fff;
   --border-color: #cccccc;
-  --navigation-link-color: rgb(56, 56, 56);
+  --accent-color: rgb(84, 141, 226);
+  /*  */
+  --button-fg-color: #fff;
+  --button-bg-color: rgb(105, 105, 105);
+  /*  */
   --input-bg-color: rgb(219, 219, 219);
   --input-fg-color: #505050;
+  --navigation-link-color: rgb(56, 56, 56);
   --label-color: rgb(95, 95, 95);
   --navbar-color: #fff;
   --light-mode-button: #000;
@@ -19,6 +22,7 @@
   --bg-color-darker: #3a3a3a;
   --fg-color: #fff;
   --button-fg-color: #181a1b;
+  --button-bg-color: rgb(204, 204, 204);
   --accent-color: rgb(84, 141, 226);
   --fg-hover-color: #000;
   --border-color: #3e4446;

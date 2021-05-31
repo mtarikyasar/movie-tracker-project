@@ -89,7 +89,14 @@ const Movie = ({ poster, imdbLink, watched, title }) => {
 
   // To add multiple class names
   let classes = "movie " + watched;
-
+  // Customize button name according to watched status
+  let status;
+  if (watched === "true") {
+    status = "unwatched";
+  } else {
+    status = "watched";
+  }
+  let buttonText = "Change to " + status;
   return (
     <div className={classes}>
       <Link
@@ -107,7 +114,7 @@ const Movie = ({ poster, imdbLink, watched, title }) => {
           onClick={(e) => addWatchlist(e)}
         ></button>
         <button className="change-movie-state-btn" onClick={changeMovieState}>
-          Change State
+          {buttonText}
         </button>
         <button
           className="fas fa-trash-alt delete-btn"
