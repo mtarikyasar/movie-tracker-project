@@ -11,6 +11,11 @@ body {
   border-radius: 10px;
 }
 
+.movie-detail p,
+h1 {
+  color: var(--fg-color);
+}
+
 .bottom-line {
   border-bottom: 3px solid var(--button-color);
   width: 30%;
@@ -57,7 +62,4 @@ body {
 
 .right-div .plot {
   font-size: 20px;
-}
-
-.director {
 }

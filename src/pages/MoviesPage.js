@@ -105,7 +105,7 @@ const MoviesPage = ({ moviesList }) => {
     <div>
       <div className="notification-success-movies-page"></div>
       <div className="notification-fail-movies-page"></div>
-      <nav className="navbar">
+      <nav className="navbar-movies-page">
         <input
           type="text"
           name="search-movie"

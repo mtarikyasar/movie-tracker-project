@@ -1,5 +1,5 @@
 .recommendation-section {
-  background-color: rgb(224, 224, 224);
+  background-color: var(--navbar-color);
   border-radius: 5px;
   height: auto;
   padding-bottom: 20px;
@@ -10,7 +10,7 @@
 .recommendation-section h2 {
   border-left: 5px var(--border-color) solid;
   border-radius: 5px 0px;
-  color: rgb(0, 0, 0);
+  color: var(--fg-color);
   padding: 10px;
   text-align: left;
 }

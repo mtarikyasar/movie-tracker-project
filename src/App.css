@@ -1,11 +1,33 @@
-:root {
+.theme-light {
   --bg-color: #adadad;
-  --bg-color-darker: #3a3a3a;
+  --bg-color-darker: #c2c2c2;
   --fg-color: #000;
   --button-fg-color: #fff;
   --button-color: rgb(84, 141, 226);
-  --fg-hover-color: #ffffff;
-  --border-color: #498be0;
+  --fg-hover-color: #fff;
+  --border-color: #cccccc;
+  --navigation-link-color: rgb(56, 56, 56);
+  --input-bg-color: rgb(219, 219, 219);
+  --input-fg-color: #505050;
+  --label-color: rgb(95, 95, 95);
+  --navbar-color: #fff;
+  --light-mode-button: #000;
+}
+
+.theme-dark {
+  --bg-color: #464c4f;
+  --bg-color-darker: #3a3a3a;
+  --fg-color: #fff;
+  --button-fg-color: #181a1b;
+  --button-color: rgb(84, 141, 226);
+  --fg-hover-color: #000;
+  --border-color: #3e4446;
+  --navigation-link-color: #c5c0b8;
+  --input-bg-color: #2c3032;
+  --input-fg-color: #a1a1a1;
+  --label-color: #aca59a;
+  --navbar-color: #181a1b;
+  --light-mode-button: #fff;
 }
 
 html,
@@ -26,16 +48,33 @@ body {
 }
 
 .navbar {
-  background-color: var(--fg-hover-color);
+  background-color: var(--navbar-color);
+  display: inline-flex;
+  width: 100%;
 }
 
-.navbar button {
+.navigation-links button {
   background-color: rgba(0, 0, 0, 0);
   border: none;
   margin: 0px 10px;
   padding: 5px;
   padding-bottom: 7px;
   font-size: 20px;
+}
+
+.change-mode {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: var(--navigation-link-color);
+  font-size: 20px;
+  padding: 5px;
+  padding-bottom: 7px;
+  margin-left: 80%;
+  transition: 0.2s linear;
+}
+
+.change-mode:hover {
+  color: var(--light-mode-button);
 }
 
 .app {
@@ -50,7 +89,7 @@ body {
 }
 
 a {
-  color: rgb(71, 71, 71);
+  color: var(--navigation-link-color);
   text-decoration: none;
   transition: 0.2s linear;
 }

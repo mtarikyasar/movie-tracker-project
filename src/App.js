@@ -56,18 +56,33 @@ async function getMovies() {
 }
 
 function App() {
+  const changeLightingMode = () => {
+    if (localStorage.getItem("theme") === "theme-light") {
+      localStorage.setItem("theme", "theme-dark");
+      document.documentElement.className = "theme-dark";
+    } else {
+      localStorage.setItem("theme", "theme-light");
+      document.documentElement.className = "theme-light";
+    }
+  };
+
   return (
     <Router>
       <div className="app">
         <nav className="navbar links">
-          <button>
-            <Link to="">Home</Link>
-          </button>
-          <button>
-            <Link to="/movies">Movies</Link>
-          </button>
-          <button>
-            <Link to="/watchlist">Watchlist</Link>
+          <div className="navigation-links">
+            <button>
+              <Link to="">Home</Link>
+            </button>
+            <button>
+              <Link to="/movies">Movies</Link>
+            </button>
+            <button>
+              <Link to="/watchlist">Watchlist</Link>
+            </button>
+          </div>
+          <button className="change-mode" onClick={changeLightingMode}>
+            <i className="fas fa-moon"></i>
           </button>
         </nav>
 

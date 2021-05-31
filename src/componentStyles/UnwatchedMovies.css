@@ -4,7 +4,7 @@
 }
 
 .movie-div {
-  background-color: rgb(184, 183, 183);
+  background-color: var(--bg-color-darker);
   border-radius: 5px;
   display: flex;
   flex: 1;
@@ -12,7 +12,7 @@
 }
 
 .movie-div p {
-  color: rgb(0, 0, 0);
+  color: var(--fg-color);
   margin-left: 10px;
   text-align: left;
 }

@@ -1,6 +1,5 @@
 .save-movie-section {
-  backdrop-filter: blur(10px);
-  background-color: rgb(236, 236, 236);
+  background-color: var(--button-fg-color);
   border-radius: 5px;
   box-shadow: 1px 1px 10px rgb(94, 94, 94);
   margin: auto;
@@ -11,8 +10,10 @@
 }
 
 input {
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   border-radius: 5px;
+  background-color: var(--input-bg-color);
+  color: var(--input-fg-color);
   padding: 7px 14px 9px;
   font-size: 16px;
   margin: 10px;
@@ -21,7 +22,7 @@ input {
 }
 
 label {
-  color: rgb(68, 68, 68);
+  color: var(--label-color);
 }
 
 #watched-check-box {
@@ -30,9 +31,10 @@ label {
 }
 
 .submit-btn {
-  border: 2px solid rgb(180, 180, 180);
+  border: none;
+  background-color: var(--bg-color);
   border-radius: 5px;
-  color: rgb(27, 27, 27);
+  color: var(--fg-color);
   font-size: 20px;
   padding: 5px;
   margin: 3px;
@@ -40,7 +42,6 @@ label {
 }
 
 .submit-btn:hover {
-  border: 2px solid var(--button-color);
   background-color: var(--button-color);
 }
 

@@ -1,17 +1,18 @@
 body {
-  backdrop-filter: blur(10px);
 }
 
 h1 {
   font-size: 34px;
 }
 
-.navbar {
+.navbar-movies-page {
+  background-color: var(--navbar-color);
   text-align: left;
+  margin-top: 1px;
 }
 
 .search-movie-input {
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   padding: 7px 14px 9px;
   font-size: 16px;
   transition: 0.4s;
@@ -24,9 +25,10 @@ label {
 }
 
 select {
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   border-radius: 5px;
-  color: rgb(146, 146, 146);
+  background-color: var(--input-bg-color);
+  color: var(--input-fg-color);
   padding: 7px 14px 9px;
   font-size: 16px;
   transition: 0.4s;
@@ -82,7 +84,7 @@ select {
 }
 
 .movie {
-  background-color: rgb(151, 151, 151);
+  background-color: var(--bg-color-darker);
   border-radius: 5px;
   padding: 10px;
   flex-direction: column;
@@ -108,10 +110,10 @@ img {
 }
 
 .add-watchlist-btn {
-  background-color: rgb(68, 68, 68);
+  background: var(--button-color-simple);
   border-radius: 4px;
   border: none;
-  color: var(--button-fg-color);
+  color: var(--fg-color);
   font-size: 15px;
   padding: 7px;
   transition: 0.2s linear;
@@ -119,30 +121,30 @@ img {
 
 .add-watchlist-btn:hover {
   background-color: rgb(169, 240, 169);
-  color: var(--fb-color);
+  color: var(--fg-hover-color);
 }
 
 .change-movie-state-btn {
-  background: rgb(68, 68, 68);
+  background: var(--button-color-simple);
   border: none;
   border-radius: 4px;
-  color: var(--button-fg-color);
+  color: var(--fg-color);
   font-size: 17px;
   transition: 0.2s linear;
   padding: 5px 5px;
 }
 
 .change-movie-state-btn:hover {
-  background-color: rgb(179, 179, 179);
-  color: var(--fb-color);
+  background-color: var(--fg-color);
+  color: var(--fg-hover-color);
 }
 
 .delete-btn {
-  background: rgb(68, 68, 68);
+  background: var(--button-color-simple);
   border: none;
   border-radius: 4px;
   padding: 7px;
-  color: var(--button-fg-color);
+  color: var(--fg-color);
   font-size: 15px;
   transition: 0.2s linear;
 }
@@ -173,7 +175,7 @@ img {
   position: absolute;
   right: 0;
   transition: opacity 0.1s linear;
-  top: 10px;
+  top: 50px;
   width: 18%;
   z-index: 1;
 }
@@ -188,7 +190,7 @@ img {
   position: absolute;
   right: 0;
   transition: opacity 0.1s linear;
-  top: 15px;
+  top: 55px;
   width: 18%;
 }
 
