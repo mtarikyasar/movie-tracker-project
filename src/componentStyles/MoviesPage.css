@@ -48,6 +48,7 @@ select {
   display: inline-flex;
   flex-wrap: wrap;
   flex: 5;
+  margin-bottom: 20px;
 }
 
 .add-watchlist-section {
