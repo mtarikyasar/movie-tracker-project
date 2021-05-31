@@ -15,7 +15,6 @@ const MoviesPage = ({ moviesList }) => {
   const showSelectedMovies = (event) => {
     let index = event.target.selectedIndex;
     let moviesSection = document.querySelector(".movies-section").children;
-    console.log(moviesSection);
 
     for (let i = 0; i < moviesSection.length; i++) {
       if (moviesSection[i].className.includes("show-movie")) {
@@ -54,7 +53,6 @@ const MoviesPage = ({ moviesList }) => {
   };
 
   const showUnwatchedMovies = (element) => {
-    console.log(element);
     for (let i = 0; i < element.length; i++) {
       if (element[i].className.includes("true")) {
         element[i].classList.toggle("show-movie");
@@ -90,7 +88,6 @@ const MoviesPage = ({ moviesList }) => {
         let potName = moviesSection.children[
           i
         ].childNodes[2].innerHTML.toLowerCase();
-        console.log(potName);
 
         if (!potName.includes(movieNameState)) {
           moviesSection.children[i].hidden = true;

@@ -103,14 +103,16 @@ img {
 }
 
 .show-movie {
-  visibility: collapse;
+  display: none;
+  /* visibility: collapse; */
 }
 
 .add-watchlist-btn {
   background-color: rgb(68, 68, 68);
-  border-radius: 50%;
+  border-radius: 4px;
   border: none;
   color: white;
+  font-size: 15px;
   padding: 7px;
   transition: 0.2s linear;
 }
@@ -123,7 +125,7 @@ img {
 .change-movie-state-btn {
   background: rgb(68, 68, 68);
   border: none;
-  border-radius: 20px;
+  border-radius: 4px;
   color: #fff;
   font-size: 17px;
   transition: 0.2s linear;
@@ -138,10 +140,10 @@ img {
 .delete-btn {
   background: rgb(68, 68, 68);
   border: none;
-  border-radius: 20px;
+  border-radius: 4px;
   padding: 7px;
   color: #fff;
-  font-size: 14px;
+  font-size: 15px;
   transition: 0.2s linear;
 }
 
