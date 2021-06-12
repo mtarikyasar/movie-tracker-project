@@ -112,13 +112,19 @@ const Movie = ({ poster, imdbLink, watched, title }) => {
         <button
           className="fas fa-plus add-watchlist-btn"
           onClick={(e) => addWatchlist(e)}
+          title="Add to watchlist"
         ></button>
-        <button className="change-movie-state-btn" onClick={changeMovieState}>
+        <button
+          className="change-movie-state-btn"
+          onClick={changeMovieState}
+          title="Change movie watched state"
+        >
           {buttonText}
         </button>
         <button
           className="fas fa-trash-alt delete-btn"
           onClick={deleteMovie}
+          title="Delete movie"
         ></button>
       </div>
       <p hidden={true}>{title}</p>

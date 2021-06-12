@@ -106,8 +106,11 @@ select {
 }
 
 .button-section {
-  width: 200px;
   display: flex;
+}
+
+.button-section button {
+  flex: 1;
 }
 
 .movie button {
