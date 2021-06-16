@@ -110,3 +110,15 @@ a {
 .navbar a:hover::after {
   width: 100%;
 }
+
+/* Media Queries */
+
+@media screen and (max-width: 1605px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .change-mode {
+    margin: 0;
+  }
+}
