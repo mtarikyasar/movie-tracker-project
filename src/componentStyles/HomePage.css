@@ -42,7 +42,8 @@ label {
 }
 
 .submit-btn:hover {
-  background-color: var(--button-color);
+  background-color: var(--accent-color);
+  color: var(--fg-color);
 }
 
 /* Notifications */
