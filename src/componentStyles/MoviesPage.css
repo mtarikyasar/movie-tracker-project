@@ -47,6 +47,7 @@ select {
   flex-wrap: wrap;
   flex: 5;
   margin-bottom: 20px;
+  justify-content: center;
 }
 
 .add-watchlist-section {
@@ -102,7 +103,7 @@ select {
   padding: 10px;
   flex-direction: column;
   margin: 20px;
-  flex: 1;
+  width: 200px;
 }
 
 .button-section {
